@@ -29,14 +29,14 @@ async function makeChart() {
 
   // 1. x 척도 구현하기
   //  - 시간척도(UTC)를 사용
-  //  - domain : dates 날짜 최소최대
+  //  - domain : d3.extent(dates)
   //  - range : [margin.left, width - margin.right] 
   const xScale =
 
 
   // 1. y 척도 구현하기
   //  - 선형척도를 사용
-  //  - domain : data의 value 최소최대
+  //  - domain : [0, d3.max(data, d => d.value)]
   //  - range : [height - margin.bottom, margin.top] 
   const yScale =
 
@@ -70,9 +70,11 @@ async function makeChart() {
 
 
   //  2) svg에 path 요소와 속성 추가
-  //    - d : 2번에서 반환된 값
-  //    - fill : 'none'
-  //    - stroke : d3.schemeTableau10[0]
+  //    - path 요소 추가
+  //    - data binding : data 변수
+  //    - d 속성 : line 변수  
+  //    - fill 속성 : 'none'
+  //    - stroke 속성 : d3.schemeTableau10[0]
   svg.append(
 
     
