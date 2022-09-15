@@ -1,4 +1,3 @@
-import * as d3 from "d3";
 import { scroller } from "./scroller.js";
 import { LineChart } from "./charts/line_chart.js";
 import {

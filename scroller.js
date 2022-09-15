@@ -1,5 +1,3 @@
-import * as d3 from "d3";
-
 export function scroller(visFuncList){
     const sections = d3.selectAll('.step');
     const containerStart = 0;
