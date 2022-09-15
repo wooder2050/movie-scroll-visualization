@@ -1,5 +1,3 @@
-import * as d3 from "d3";
-
 async function getData() {
   const dateSet = new Set();
   const csv = await d3.csv(`./data/movie2019.csv`);
