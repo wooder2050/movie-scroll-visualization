@@ -41,6 +41,41 @@ async function makeChart() {
   const yScale =
 
 
+  // 2. x 축 구현하기
+  //  - 아래(Bottom)에 위치
+  //  - xScale (x척도)
+  const xAxis = 
+
+
+  // 2. y 축 구현하기
+  //  - 왼쪽(Left)에 위치
+  //  - yScale (y척도)
+  const yAxis =
+
+
+  svg.append('g')
+    .attr('transform', 'translate(0,' + (height - margin.bottom) + ')')
+    .call(xAxis);
+
+  svg.append('g')
+    .attr('transform', 'translate(' + margin.left + ',0)')
+    .call(yAxis);
+
+
+  // 3. 라인 차트 그리기
+  //  1) d3.line과 x, y메소드 구현
+  //    - x {key}는 'date'
+  //    - y {key}는 'value'
+  const line = 
+
+
+  //  2) svg에 path 요소와 속성 추가
+  //    - d : 2번에서 반환된 값
+  //    - fill : 'none'
+  //    - stroke : d3.schemeTableau10[0]
+  svg.append(
+
+    
 }
 
 makeChart();
