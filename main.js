@@ -66,6 +66,20 @@ async function makeChart() {
     .call(yAxis);
 
 
+  // 3. 라인 차트 그리기
+  //  1) d3.line과 x, y메소드 구현
+  //    - x {key}는 'date'
+  //    - y {key}는 'value'
+  const line = 
+
+
+  //  2) svg에 path 요소와 속성 추가
+  //    - d : 2번에서 반환된 값
+  //    - fill : 'none'
+  //    - stroke : d3.schemeTableau10[0]
+  svg.append(
+
+
 }
 
 makeChart();
