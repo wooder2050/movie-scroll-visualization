@@ -74,9 +74,11 @@ async function makeChart() {
 
 
   //  2) svg에 path 요소와 속성 추가
-  //    - d : 2번에서 반환된 값
-  //    - fill : 'none'
-  //    - stroke : d3.schemeTableau10[0]
+  //    - path 요소 추가
+  //    - data binding : data 변수
+  //    - d 속성 : line 변수  
+  //    - fill 속성 : 'none'
+  //    - stroke 속성 : d3.schemeTableau10[0]
   svg.append(
 
 
