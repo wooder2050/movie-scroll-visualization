@@ -33,26 +33,30 @@ async function makeChart() {
   //  - 시간척도(UTC)를 사용
   //  - domain : dates 날짜 최소최대
   //  - range : [margin.left, width - margin.right] 
-  const xScale =
+  const xScale = d3.scaleUtc()
+    .domain(d3.extent(dates))
+    .range([margin.left, width - margin.right]);
 
 
   // 1. y 척도 구현하기
   //  - 선형척도를 사용
   //  - domain : data의 value 최소최대
   //  - range : [height - margin.bottom, margin.top] 
-  const yScale =
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.value)])
+    .range([height - margin.bottom, margin.top]);
 
  
   // 2. x 축 구현하기
   //  - 아래(Bottom)에 위치
   //  - xScale (x척도)
-  const xAxis = 
+  const xAxis = d3.axisBottom(xScale);
 
 
   // 2. y 축 구현하기
   //  - 왼쪽(Left)에 위치
   //  - yScale (y척도)
-  const yAxis =
+  const yAxis = d3.axisLeft(yScale);
 
 
   svg.append('g')
