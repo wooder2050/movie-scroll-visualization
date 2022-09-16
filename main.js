@@ -74,6 +74,7 @@ async function makeChart() {
 
 
   //  2) svg에 path 요소와 속성 추가
+  //   (svg는 d3.select(’svg’)로 위에서 먼저 할당된 변수입니다.)
   //    - path 요소 추가
   //    - data binding : data 변수
   //    - d 속성 : line 변수  
